@@ -1,3 +1,5 @@
+# https://johnsamarasinghe.blogspot.com/2020/12/scraping-university-courses-part-1.html
+
 from selenium import webdriver
 from bs4 import BeautifulSoup as BS
 
