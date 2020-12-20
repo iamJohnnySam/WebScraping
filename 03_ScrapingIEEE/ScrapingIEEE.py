@@ -31,8 +31,13 @@ for x in inp:
         eigen = "Not Found"
         
     desc = soup.find_all("span", class_="aims-scope-container")[0].text
+    desc = desc.split("The articles",1)[0]
+    # desc = desc.replace("\n",'" & CHAR(10) & "')
+    desc = desc.replace("\n"," ")
+    desc = desc.replace("\xa0", "")
     desc = desc.replace("  ","")
     desc = desc.strip()
+    # desc = '="' + desc + '"'
 
     out.append([name, web, impact, eigen, desc])
     
@@ -41,6 +46,6 @@ for x in inp:
 import csv
 
 with open('output.csv', 'w', newline='', encoding="utf-8") as myfile:
-    wr = csv.writer(myfile, delimiter=',')
+    wr = csv.writer(myfile, delimiter='|')
     for a in out:
         wr.writerow(a)
