@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup as BS
 
 chrome_options = Options()
 chrome_options.add_experimental_option('prefs', {
-    "download.default_directory": "C:\\Users\\johns\\Desktop",
+    "download.default_directory": "C:\\Users\\iamJohnnySam\\Desktop",
     "download.prompt_for_download": False,
     "download.directory_upgrade": True,
     "plugins.always_open_pdf_externally": True
@@ -26,8 +26,7 @@ driver = webdriver.Chrome("chromedriver.exe")
 getter = webdriver.Chrome("chromedriver.exe", options=chrome_options)
 
 while True:
-    # inp = input("Enter the page you want downloaded: ")
-    inp = "https://ieeexplore.ieee.org/document/4037142"
+    inp = input("Enter the page you want downloaded: ")
     
     if inp == "x":
         break
